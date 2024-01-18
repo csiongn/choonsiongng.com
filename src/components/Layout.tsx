@@ -77,16 +77,27 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                         {/* Drawer Links */}
                         <Link href="/" passHref>
                             <span className="block text-gray-500 hover:text-blue-500 transition-colors p-2"
-                                  onClick={closeDrawer}>Home</span>
+                                  onClick={closeDrawer}>
+                                Home
+                            </span>
                         </Link>
                         <Link href="/projects" passHref>
-                            <span className=" block text-gray-500 hover:text-blue-500 transition-colors p-2">Projects</span>
+                            <span className=" block text-gray-500 hover:text-blue-500 transition-colors p-2"
+                                  onClick={closeDrawer}>
+                                Projects
+                            </span>
                         </Link>
                         <Link href="/contact" passHref>
-                            <span className="block text-gray-500 hover:text-blue-500 transition-colors p-2">Contact</span>
+                            <span className="block text-gray-500 hover:text-blue-500 transition-colors p-2"
+                                  onClick={closeDrawer}>
+                                Contact
+                            </span>
                         </Link>
                         <Link href="/Choon_Siong_Ng_Resume.pdf" passHref>
-                            <span className="block text-gray-500 hover:text-blue-500 transition-colors p-2">Resume</span>
+                            <span className="block text-gray-500 hover:text-blue-500 transition-colors p-2"
+                                  onClick={closeDrawer}>
+                                Resume
+                            </span>
                         </Link>
                     </div>
                 </div>
