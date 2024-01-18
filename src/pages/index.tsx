@@ -15,8 +15,8 @@ export default function Home() {
           <div className="flex flex-col-reverse md:flex-row pl-6">
               <div className="md:w-1/2 flex items-center justify-center p-6">
                   <div>
-                      <h1 className="text-2xl font-bold mb-4">I'm Choon Siong</h1>
-                      <p className="mb-4">I'm a final-year Computer Science at the National University of
+                      <h1 className="text-2xl font-bold mb-4">I&apos;m Choon Siong</h1>
+                      <p className="mb-4">I&apos;m a final-year Computer Science at the National University of
                           Singapore.</p>
                   </div>
               </div>
