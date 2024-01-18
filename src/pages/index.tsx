@@ -5,7 +5,9 @@ import PageHeader from "@/components/PageHeader";
 import ProjectList from "@/components/projects/ProjectList";
 import ContactFooter from "@/components/ContactFooter";
 import React from "react";
-Inter({ subsets: ['latin'] });
+
+const inter = Inter({ subsets: ['latin'] })
+
 export default function Home() {
   return (
       <div>
