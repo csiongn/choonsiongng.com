@@ -2,14 +2,14 @@ import SocialLink from "@/data/SocialLink";
 
 export const socialLinks: SocialLink[] = [
     {
-        name: 'choonsiong.ng@outlook.com',
-        url: 'mailto:choonsiong.ng@outlook.com',
-        icon: '/icons/email.svg',
+        name: 'choonsiong [dot] ng [at] outlook [dot] com',
+        url: 'mailto:choonsiong [dot] ng [at] outlook [dot] com',
+        icon: '/icons/envelope.svg',
     },
     {
         name: 'github.com/csiongn',
         url: 'https://github.com/csiongn',
-        icon: '/icons/github.svg',
+        icon: '/icons/github_new.svg',
     },
     {
         name: 'linkedin.com/choon-siong-ng',
