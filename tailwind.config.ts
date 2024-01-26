@@ -15,6 +15,8 @@ const config: Config = {
       },
     },
   },
+  darkMode: 'class',
+  important: true, // Set all tailwind classes as !important. This overrides all global styles with tailwind styles
   plugins: [],
 }
 export default config

@@ -3,17 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 255, 255, 255;
-  --background-end-rgb: 255, 255, 255;
+  @apply bg-white
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.dark body {
+  @apply bg-gray-700
+}
+
+.dark p, .dark span, .dark h1, .dark h2, .dark h3, .dark h4 {
+  @apply text-white
 }
 
 html, body {
@@ -21,12 +19,26 @@ html, body {
   padding: 0;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+.toggle-checkbox:checked {
+  right: 0;
+}
+
+.toggle-checkbox:checked + .toggle-label {
+  background-color: #4B5563; /* Color when dark mode is active */
+}
+
+.toggle-checkbox {
+  right: 0;
+  border-color: #4B5563;
+  opacity: 0; /* Hide the default checkbox */
+  width: 100%; /* Cover the entire area for click efficiency */
+  height: 100%;
+  z-index: 2; /* Ensure it's clickable */
+}
+
+.toggle-label {
+  display: grid;
+  place-items: center;
+  transition: background-color 0.2s;
 }

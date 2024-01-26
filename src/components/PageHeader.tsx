@@ -9,7 +9,7 @@ type PageHeaderProps = {
 const PageHeader: React.FC<PageHeaderProps> = ({
                                                    title,
                                                    description,
-                                                   color = 'bg-blue-100 text-blue-950' // Default colors
+                                                   color = 'bg-blue-100 text-blue-950 dark:bg-blue-950 dark:text-blue-150' // Default colors
                                                }) => {
     return (
         <div className={`${color} w-full`}>
