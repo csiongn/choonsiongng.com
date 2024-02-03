@@ -76,7 +76,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                             <Link href="/contact" passHref>
                                 <span className="text-gray-500 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-200 transition-colors">Contact</span>
                             </Link>
-                            <Link href="/Choon_Siong_Ng_Resume.pdf" passHref>
+                            <Link href="/Choon_Siong_Ng_Resume_web.pdf" passHref>
                                 <span className="text-gray-500 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-200 transition-colors">Resume</span>
                             </Link>
                             <ThemeToggle />
@@ -107,7 +107,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                                     Contact
                                 </span>
                             </Link>
-                            <Link href="/Choon_Siong_Ng_Resume.pdf" passHref>
+                            <Link href="/Choon_Siong_Ng_Resume_web.pdf" passHref>
                                 <span className="block text-gray-500 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-200 transition-colors p-2"
                                       onClick={closeDrawer}>
                                     Resume
