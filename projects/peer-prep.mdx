@@ -1,0 +1,38 @@
+﻿---
+title: "Peer Prep"
+description: "A microservice-based web application for collaborative code editing for a software development course."
+image: "/images/peer-prep.png"
+---
+
+## Peer Prep
+[GitHub repository: https://github.com/CS3219-AY2324S1/ay2324s1-course-assessment-g26](https://github.com/CS3219-AY2324S1/ay2324s1-course-assessment-g26)
+  
+### Overview  
+
+I created web application for collaborative code editing as a group project for one of my software engineering courses. It includes features like user authentication, event scheduling, and real-time notifications. I was responsible for writing the code in the User Service and the Attempts Service.
+
+### Technology Stack  
+  
+- Next.JS/React for the frontend  
+- Express/NodeJS for the backend  
+- MongoDB and PostgreSQL for the databases
+
+### Microservices 
+  
+- **User Service**: Manages user accounts, authentication, and profile information
+- **Question Service**: Users can create and manage events.  
+- **Matching Service**: 
+- **Collaboration Service**: Handles collaborative code editing via RabbitMQ
+- **AI Service**: Handles chat functionality with ChatGPT
+- **Attempts Service (bundled with User Service)**: Handles saving of code during attempts
+
+### Architecture
+
+![PeerPrep Architecture diagram](https://choonsiongng.s3.ap-southeast-2.amazonaws.com/images/peer-prep/peer-prep_architecture_diagram.png)
+
+The backend consists of microservices, each of which is run in a separate docker container. The frontend communicates with these microservices via HTTP requests using an Nginx API Gateway.
+
+For the user service/attempts service, the code can be broadly be thought of to follow a layered architecture where there is
+  
+### Screenshots  
+
