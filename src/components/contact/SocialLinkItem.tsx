@@ -1,5 +1,5 @@
 import React from 'react';
-import SocialLink from "@/data/SocialLink";
+import SocialLink from "./SocialLink";
 
 const SocialLinkItem: React.FC<{ link: SocialLink }> = ({ link }) => {
     return (

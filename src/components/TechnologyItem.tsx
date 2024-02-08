@@ -1,5 +1,5 @@
 import React from "react";
-import Technology from "@/data/Technology";
+import Technology from "@/../data/Technology";
 
 const TechnologyItem: React.FC<{technology: Technology}> = ({technology}) => {
     return (

@@ -1,6 +1,6 @@
 // components/SocialLinksList.tsx
 import React from 'react';
-import { socialLinks } from '@/data/socialLinks';
+import { socialLinks } from '@/../data/socialLinks';
 import SocialLinkItem from '@/components/contact/SocialLinkItem';
 
 type SocialLinksListProps = {

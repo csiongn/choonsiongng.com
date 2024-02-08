@@ -1,4 +1,4 @@
-import SocialLink from "@/data/SocialLink";
+import SocialLink from "@/components/contact/SocialLink";
 
 export const socialLinks: SocialLink[] = [
     {

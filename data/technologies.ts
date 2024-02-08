@@ -1,4 +1,4 @@
-import Technology from "@/data/Technology";
+import Technology from "./Technology";
 
 export const technologies: Technology[] = [
     {

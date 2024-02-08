@@ -1,6 +1,6 @@
 import React from 'react';
 import PageHeader from "@/components/PageHeader";
-import ContactFooter from "@/components/ContactFooter";
+import ContactFooter from "@/components/contact/ContactFooter";
 
 const Contact: React.FC = () => {
     return (
