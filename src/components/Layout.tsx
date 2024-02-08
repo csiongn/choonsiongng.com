@@ -1,7 +1,7 @@
-import React, {useState, useRef, useEffect} from "react";
+import React, {useState} from "react";
 import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
-import Hamburger from "../../public/icons/hamburger";
+import Hamburger from "@/../public/icons/hamburger";
 import {useDarkMode} from "@/contexts/DarkModeContext";
 
 type LayoutProps = {
@@ -15,27 +15,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
     // Drawer
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-    const drawerRef = useRef<HTMLDivElement | null>(null);
 
     const closeDrawer = () => setIsDrawerOpen(false);
     const toggleDrawer = () => setIsDrawerOpen(!isDrawerOpen);
-
-    // Close drawer on mobile if clicked outside
-    const handleClickOutside = (event: MouseEvent) => {
-        if (drawerRef.current && !drawerRef.current.contains(event.target as Node)) {
-            closeDrawer();
-        }
-    };
-
-    useEffect(() => {
-        // Attach the event listener to handle mouse clicks
-        document.addEventListener("mousedown", handleClickOutside);
-
-        // Cleanup the event listener
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, []);
 
     return (
         <div className="flex flex-col min-h-screen">

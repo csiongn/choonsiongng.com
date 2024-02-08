@@ -1,26 +1,38 @@
+import React from "react";
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import TechnologiesList from "@/components/TechnologiesList";
 import PageHeader from "@/components/PageHeader";
+import TechnologiesList from "@/components/TechnologiesList";
+import Project from "@/components/projects/Project";
 import ProjectList from "@/components/projects/ProjectList";
-import ContactFooter from "@/components/ContactFooter";
-import React from "react";
+import ContactFooter from "@/components/contact/ContactFooter";
+import {getProjectsData} from "@/utils/getProjectData";
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export async function getStaticProps() {
+    const projects = getProjectsData();
+
+    return {
+        props: {
+            projects,
+        },
+    };
+}
+
+export default function Home({ projects }: { projects: Project[] }) {
   return (
       <div>
           {/* Introduction */}
-          <div className="flex flex-col-reverse md:flex-row pl-6">
-              <div className="md:w-1/2 flex items-center justify-center p-6">
+          <div className="container flex flex-col-reverse md:flex-row mx-auto">
+              <div className="md:w-1/2 flex items-center justify-center">
                   <div>
-                      <h1 className="text-2xl font-bold mb-4">I&apos;m Choon Siong</h1>
-                      <p className="mb-4">I&apos;m a final-year Computer Science at the National University of
-                          Singapore.</p>
+                      <h1 className="text-2xl font-bold mb-4">Choon Siong</h1>
+                      <p className="mb-4">Final-year Computer Science at the National University of
+                          Singapore</p>
                   </div>
               </div>
-              <div className="md:w-1/2 flex items-center justify-center p-6">
+              <div className="md:w-1/2 flex items-center justify-end pt-6 ">
                   <Image
                       src="/profile_image.jpg"
                       alt="Profile Image"
@@ -35,8 +47,8 @@ export default function Home() {
           {/* Projects */}
           <div>
               <PageHeader title="Projects" color="bg-green-50 text-green-950 dark:bg-green-950 dark:text-green-50"
-                          description="Projects that I did (mostly) while I was in university"/>
-              <ProjectList/>
+                          description="Projects that I did while I was in university"/>
+              <ProjectList projects={projects}/>
           </div>
           {/* Contact */}
           <div>
