@@ -33,7 +33,7 @@ The backend consists of microservices, each of which is run in a separate docker
 
 For the user service/attempts service, the code can be broadly be thought of to follow a layered architecture consisting of a web layer, service layer, data access layer and the database.
 
-<img src="https://choonsiongng.s3.ap-southeast-2.amazonaws.com/images/peer-prep/peer-prep_user_service_architecture_diagram.jpg" style="min-width: 250px; width: 28%;" />
+<img src="https://choonsiongng.s3.ap-southeast-2.amazonaws.com/images/peer-prep/peer-prep_user_service_architecture_diagram.jpg" style="min-width: min(250px, 100%); width: 28%;" />
 
 - **Web Layer**: The web layer handles the public APIs for the User Service. It consists of a Node.js Express application that exposes REST endpoints for client and other services to integrate with.
 - **Service Layer**: The service layer contains the logic and coordination across components. It handles tasks like authentication and request validation and consists of the middlewares and routes.
@@ -51,12 +51,12 @@ For the user service/attempts service, the code can be broadly be thought of to 
 
     .grid-item {
         flex: 1;
-        min-width: 400px; /* Minimum width of each item before wrapping */
+        min-width: min(400px, 100%); /* Minimum width of each item before wrapping */
         max-width: calc(50% - 40px);
     }
 
     .grid-item img {
-        width: 95%;
+        width: 100%;
         height: auto; /* Maintain aspect ratio */
         display: block; /* Remove bottom space caused by inline elements */
     }
