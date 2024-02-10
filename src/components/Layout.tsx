@@ -99,7 +99,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                     </div>
                 </div>
             </header>
-            <main className="flex-grow px-6 relative">
+            <main className="flex-grow relative">
                 {children}
             </main>
         </div>
