@@ -1,21 +1,20 @@
 ﻿---
 title: "Peer Prep"
 description: "A microservice-based web application for collaborative code editing for a software development course."
-image: "/images/peer-prep.png"
+image: "https://choonsiongng.s3.ap-southeast-2.amazonaws.com/images/peer-prep/peer_prep_profile_ui_cropped.png"
 ---
-
 ## Peer Prep
-[GitHub repository: https://github.com/CS3219-AY2324S1/ay2324s1-course-assessment-g26](https://github.com/CS3219-AY2324S1/ay2324s1-course-assessment-g26)
+[GitHub repository](https://github.com/CS3219-AY2324S1/ay2324s1-course-assessment-g26)
   
 ### Overview  
 
-I created web application for collaborative code editing as a group project for one of my software engineering courses. It includes features like user authentication, event scheduling, and real-time notifications. I was responsible for writing the code in the User Service and the Attempts Service.
+As part of a software development course, I did a group project to create a microservice-based web application for collaborative code editing. It includes features like user authentication, collaborative code editing and a chat api with ChatGPT. I was responsible for writing the code in the User Service and the Attempts Service.
 
-### Technology Stack  
-  
-- Next.JS/React for the frontend  
-- Express/NodeJS for the backend  
-- MongoDB and PostgreSQL for the databases
+### Technology Stack
+
+- **Frontend**: Developed with Next.js/React for interactive and responsive UI/UX.
+- **Backend**: Built using Express/Node.js, ensuring robust server-side functionality.
+- **Databases**: Utilized MongoDB for flexible document storage and PostgreSQL for structured data, optimizing data management across services.
 
 ### Microservices 
   
@@ -24,15 +23,54 @@ I created web application for collaborative code editing as a group project for 
 - **Matching Service**: 
 - **Collaboration Service**: Handles collaborative code editing via RabbitMQ
 - **AI Service**: Handles chat functionality with ChatGPT
-- **Attempts Service (bundled with User Service)**: Handles saving of code during attempts
+- **Attempts Service (bundled with User Service)**: Handles saving of code during attempts of every user
 
 ### Architecture
 
-![PeerPrep Architecture diagram](https://choonsiongng.s3.ap-southeast-2.amazonaws.com/images/peer-prep/peer-prep_architecture_diagram.png)
+![Peer Prep Architecture diagram](https://choonsiongng.s3.ap-southeast-2.amazonaws.com/images/peer-prep/peer-prep_architecture_diagram.png)
 
 The backend consists of microservices, each of which is run in a separate docker container. The frontend communicates with these microservices via HTTP requests using an Nginx API Gateway.
 
-For the user service/attempts service, the code can be broadly be thought of to follow a layered architecture where there is
+For the user service/attempts service, the code can be broadly be thought of to follow a layered architecture consisting of a web layer, service layer, data access layer and the database.
+
+<img src="https://choonsiongng.s3.ap-southeast-2.amazonaws.com/images/peer-prep/peer-prep_user_service_architecture_diagram.jpg" style="min-width: 250px; width: 28%;" />
+
+- **Web Layer**: The web layer handles the public APIs for the User Service. It consists of a Node.js Express application that exposes REST endpoints for client and other services to integrate with.
+- **Service Layer**: The service layer contains the logic and coordination across components. It handles tasks like authentication and request validation and consists of the middlewares and routes.
+- **Data Access Layer**: The data layer abstracts the underlying PostgreSQL database. It consists of the functions to interact with the database in the controller
+- **Database**: The database (written in PostgreSQL for the user and attempts service) stores the user information and attempts
   
-### Screenshots  
+### Screenshots
+<style>
+    .grid-container {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+        gap: 40px; /* Controls spacing between items */
+    }
+
+    .grid-item {
+        flex: 1;
+        min-width: 400px; /* Minimum width of each item before wrapping */
+        max-width: calc(50% - 40px);
+    }
+
+    .grid-item img {
+        width: 100%;
+        height: auto; /* Maintain aspect ratio */
+        display: block; /* Remove bottom space caused by inline elements */
+    }
+</style>
+<div class="grid-container">
+    <div class="grid-item">
+        <img src="https://choonsiongng.s3.ap-southeast-2.amazonaws.com/images/peer-prep/peer-prep_profile_ui.jpg" alt="Profile page of the website" />
+    </div>
+    <div class="grid-item">
+        <img src="https://choonsiongng.s3.ap-southeast-2.amazonaws.com/images/peer-prep/peer-prep_question_ui.jpg" alt="Viewing a question" />
+    </div>
+    <div class="grid-item">
+        <img src="https://choonsiongng.s3.ap-southeast-2.amazonaws.com/images/peer-prep/peer-prep_saved_attempt_ui.jpg" alt="Saveed coding attempt" />
+    </div>
+</div>
+
 
