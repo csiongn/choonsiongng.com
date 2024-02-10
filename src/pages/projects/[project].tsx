@@ -2,7 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
-import html from 'remark-html';
+import parse from 'remark-parse';
+import rehype from 'remark-rehype';
+import stringify from 'rehype-stringify';
 
 import { useRouter } from 'next/router';
 
@@ -41,7 +43,10 @@ export async function getStaticProps({params}: {params: {project: string}}) {
 
     // Parse the markdown contents into html
     const processedContent = await remark()
-        .use(html)
+        //.use(mdx)
+        .use(parse)
+        .use(rehype, {allowDangerousHtml: true})
+        .use(stringify, {allowDangerousHtml: true})
         .process(content);
     const contentHtml = processedContent.toString();
 
