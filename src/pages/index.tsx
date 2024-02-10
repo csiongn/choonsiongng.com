@@ -32,7 +32,7 @@ export default function Home({ projects }: { projects: Project[] }) {
                           Singapore</p>
                   </div>
               </div>
-              <div className="md:w-1/2 flex items-center justify-end pt-6 ">
+              <div className="md:w-1/2 md:justify-end justify-center flex items-center pt-6 pb-2">
                   <Image
                       src="/profile_image.jpg"
                       alt="Profile Image"
