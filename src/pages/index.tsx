@@ -24,7 +24,7 @@ export default function Home({ projects }: { projects: Project[] }) {
   return (
       <div>
           {/* Introduction */}
-          <div className="container flex flex-col-reverse md:flex-row mx-auto">
+          <div className="container flex flex-col-reverse md:flex-row mx-auto px-6">
               <div className="md:w-1/2 flex items-center justify-center">
                   <div>
                       <h1 className="text-2xl font-bold mb-4">Choon Siong</h1>
@@ -52,7 +52,7 @@ export default function Home({ projects }: { projects: Project[] }) {
           </div>
           {/* Contact */}
           <div>
-              <PageHeader title="Contact" color="bg-blue-50 text-blue-950  dark:bg-blue-950 dark:text-blue-50"/>
+              <PageHeader title="Contact" color="bg-blue-50 text-blue-950 dark:bg-blue-950 dark:text-blue-50"/>
               <ContactFooter />
           </div>
       </div>
