@@ -41,5 +41,5 @@ jobs:
             docker stop choonsiongngdotcom || true
             docker rm choonsiongngdotcom || true
             docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/choonsiongngdotcom || true
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/choonsiongngdotcom
-            docker run -p 3000:3000 choonsiongngdotcom
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/choonsiongngdotcom:latest
+            docker run -p 3000:3000 choonsiongngdotcom:latest
