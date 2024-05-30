@@ -1,0 +1,44 @@
+name: Deploy web server to Digital Ocean
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-push-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        # https://github.com/docker/login-action
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        # https://github.com/docker/build-push-action
+        with:
+          context: .
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/choonsiongngdotcom
+
+      - name: SSH to Digital Ocean droplet and deploy
+        uses: appleboy/ssh-action@master
+        # https://github.com/appleboy/ssh-action
+        with:
+          host: ${{ secrets.DIGITAL_OCEAN_IP }}
+          username: ${{ secrets.DIGITAL_OCEAN_USERNAME }}
+          key: ${{ secrets.DIGITAL_OCEAN_SSH_KEY }}
+          passphrase: ${{ secrets.DIGITAL_OCEAN_KEY_PASSPHRASE }}
+          script: |
+            docker stop choonsiongngdotcom || true
+            docker rm choonsiongngdotcom || true
+            docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/choonsiongngdotcom
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/choonsiongngdotcom
+            docker build -t choonsiongngdotcom .
+            docker run -p 3000:3000 choonsiongngdotcom
