@@ -40,7 +40,6 @@ jobs:
           script: |
             docker stop choonsiongngdotcom || true
             docker rm choonsiongngdotcom || true
-            docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/choonsiongngdotcom
+            docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/choonsiongngdotcom || true
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/choonsiongngdotcom
-            docker build -t choonsiongngdotcom .
             docker run -p 3000:3000 choonsiongngdotcom
