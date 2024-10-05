@@ -2,8 +2,8 @@ import SocialLink from "@/components/contact/SocialLink";
 
 export const socialLinks: SocialLink[] = [
     {
-        name: 'choonsiongng [at] mail [dot] choonsiongng [dot] com',
-        url: 'mailto:choonsiongng[at]mail[dot]choonsiongng[dot]com',
+        name: 'choonsiong [dot] ng [at] icloud [dot] com',
+        url: 'mailto:choonsiong[dot]ng[at]icloud[dot]com',
         icon: '/icons/envelope.svg',
     },
     {
