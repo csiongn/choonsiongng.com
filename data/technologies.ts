@@ -2,28 +2,16 @@ import Technology from "./Technology";
 
 export const technologies: Technology[] = [
     {
-        name: 'C/C++'
-    },
-    {
-        name: 'Java',
+        name: 'C++ (basic)'
     },
     {
         name: 'Python',
     },
     {
-        name: 'JavaScript',
+        name: 'Go',
     },
     {
-        name: 'Next.JS',
-    },
-    {
-        name: 'Express',
-    },
-    {
-        name: 'PostgreSQL',
-    },
-    {
-        name: 'MongoDB',
+        name: 'SQL',
     },
     {
         name: 'Docker',
