@@ -24,8 +24,8 @@ export default function Home({ projects }: { projects: Project[] }) {
   return (
       <div>
           {/* Introduction */}
-          <div className="container flex flex-col-reverse md:flex-row mx-auto px-6">
-              <div className="md:w-1/2 flex items-center justify-center">
+          <div className="container flex flex-col-reverse md:flex-row px-6 py-6 my-4 mx-auto">
+              <div className="md:w-1/2 flex items-center pt-8">
                   <div>
                       <h1 className="text-2xl font-bold mb-4">Choon Siong</h1>
                       <p className="mb-4">Final-year Computer Science at the National University of
@@ -33,13 +33,7 @@ export default function Home({ projects }: { projects: Project[] }) {
                   </div>
               </div>
               <div className="md:w-1/2 md:justify-end justify-center flex items-center pt-6 pb-2">
-                  <Image
-                      src="/profile_image.jpg"
-                      alt="Profile Image"
-                      width={250}
-                      height={250}
-                      className="rounded-3xl aspect-square object-scale-down"
-                  />
+                  {/* Insert picture here*/}
               </div>
           </div>
           {/* Technologies */}
